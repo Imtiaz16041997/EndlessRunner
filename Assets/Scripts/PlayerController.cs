@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public bool jump = false;
     public bool slide = false;
     public Animator anim;
+    public GameObject trigger;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {     
-         transform.Translate(0, 0,0.02f);  // this is for Running Code 
+         transform.Translate(0, 0,0.05f);  // this is for Running Code 
 
         if (Input.GetKey(KeyCode.Space))
         {
@@ -42,7 +43,7 @@ public class PlayerController : MonoBehaviour
         if (jump == true)  // This is for Jumping
         {
             anim.SetBool("isJump", jump);
-            transform.Translate(0, 0.02f, 0.01f);
+            transform.Translate(0, 0.04f, 0.01f);
 
         }
         else if (jump == false)
@@ -66,5 +67,17 @@ public class PlayerController : MonoBehaviour
 
         }
 
+        trigger = GameObject.FindGameObjectWithTag("Obstacle");
+
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "PlayerTrigger")
+        {
+
+            Destroy(trigger.gameObject);
+         
+        }
     }
 }
