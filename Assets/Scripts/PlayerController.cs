@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {     
-         transform.Translate(0, 0,0.01f);  // this is for Running Code 
+         transform.Translate(0, 0,0.02f);  // this is for Running Code 
 
         if (Input.GetKey(KeyCode.Space))
         {
