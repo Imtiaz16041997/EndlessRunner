@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Obstacle
   - PlayerTrigger
+  - Coin
+  - Boost
+  - DeathPoint
+  - MenuController
   layers:
   - Default
   - TransparentFX
